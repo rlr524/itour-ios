@@ -11,6 +11,7 @@
 		D44810412AD5C7F500BC9429 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44810402AD5C7F500BC9429 /* ContentView.swift */; };
 		D44810432AD5C7F600BC9429 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D44810422AD5C7F600BC9429 /* Assets.xcassets */; };
 		D44810462AD5C7F600BC9429 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D44810452AD5C7F600BC9429 /* Preview Assets.xcassets */; };
+		D448104D2AD5CCB600BC9429 /* Destination.swift in Sources */ = {isa = PBXBuildFile; fileRef = D448104C2AD5CCB500BC9429 /* Destination.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		D44810402AD5C7F500BC9429 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D44810422AD5C7F600BC9429 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D44810452AD5C7F600BC9429 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		D448104C2AD5CCB500BC9429 /* Destination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Destination.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			children = (
 				D448103E2AD5C7F500BC9429 /* iTourApp.swift */,
 				D44810402AD5C7F500BC9429 /* ContentView.swift */,
+				D448104E2AD5CCBB00BC9429 /* Models */,
 				D44810422AD5C7F600BC9429 /* Assets.xcassets */,
 				D44810442AD5C7F600BC9429 /* Preview Content */,
 			);
@@ -65,6 +68,14 @@
 				D44810452AD5C7F600BC9429 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		D448104E2AD5CCBB00BC9429 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D448104C2AD5CCB500BC9429 /* Destination.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +150,7 @@
 			files = (
 				D44810412AD5C7F500BC9429 /* ContentView.swift in Sources */,
 				D448103F2AD5C7F500BC9429 /* iTourApp.swift in Sources */,
+				D448104D2AD5CCB600BC9429 /* Destination.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
