@@ -14,6 +14,8 @@
 		D44810462AD5C7F600BC9429 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D44810452AD5C7F600BC9429 /* Preview Assets.xcassets */; };
 		D448104D2AD5CCB600BC9429 /* Destination.swift in Sources */ = {isa = PBXBuildFile; fileRef = D448104C2AD5CCB500BC9429 /* Destination.swift */; };
 		D44810522AD62F1A00BC9429 /* EditDestinationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44810512AD62F1A00BC9429 /* EditDestinationView.swift */; };
+		D44BB04A2AD9B9F900BD4F64 /* EditDestinationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44BB0492AD9B9F900BD4F64 /* EditDestinationViewModel.swift */; };
+		D44BB04C2AD9BA0D00BD4F64 /* DestinationListingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44BB04B2AD9BA0D00BD4F64 /* DestinationListingViewModel.swift */; };
 		D494AE7F2AD8C5DE00B735F3 /* Sight.swift in Sources */ = {isa = PBXBuildFile; fileRef = D494AE7E2AD8C5DE00B735F3 /* Sight.swift */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +28,8 @@
 		D44810452AD5C7F600BC9429 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D448104C2AD5CCB500BC9429 /* Destination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Destination.swift; sourceTree = "<group>"; };
 		D44810512AD62F1A00BC9429 /* EditDestinationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDestinationView.swift; sourceTree = "<group>"; };
+		D44BB0492AD9B9F900BD4F64 /* EditDestinationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDestinationViewModel.swift; sourceTree = "<group>"; };
+		D44BB04B2AD9BA0D00BD4F64 /* DestinationListingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationListingViewModel.swift; sourceTree = "<group>"; };
 		D494AE7E2AD8C5DE00B735F3 /* Sight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sight.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -43,8 +47,8 @@
 		D41F63FE2AD76EA50025836B /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				D44810512AD62F1A00BC9429 /* EditDestinationView.swift */,
-				D41F63FC2AD76E9C0025836B /* DestinationListingView.swift */,
+				D44BB04F2AD9C11D00BD4F64 /* EditDestinationView */,
+				D44BB04E2AD9C10F00BD4F64 /* DestinationListingView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -70,8 +74,8 @@
 			children = (
 				D448103E2AD5C7F500BC9429 /* iTourApp.swift */,
 				D44810402AD5C7F500BC9429 /* ContentView.swift */,
-				D41F63FE2AD76EA50025836B /* Views */,
 				D448104E2AD5CCBB00BC9429 /* Models */,
+				D41F63FE2AD76EA50025836B /* Views */,
 				D44810422AD5C7F600BC9429 /* Assets.xcassets */,
 				D44810442AD5C7F600BC9429 /* Preview Content */,
 			);
@@ -93,6 +97,24 @@
 				D494AE7E2AD8C5DE00B735F3 /* Sight.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		D44BB04E2AD9C10F00BD4F64 /* DestinationListingView */ = {
+			isa = PBXGroup;
+			children = (
+				D44BB04B2AD9BA0D00BD4F64 /* DestinationListingViewModel.swift */,
+				D41F63FC2AD76E9C0025836B /* DestinationListingView.swift */,
+			);
+			path = DestinationListingView;
+			sourceTree = "<group>";
+		};
+		D44BB04F2AD9C11D00BD4F64 /* EditDestinationView */ = {
+			isa = PBXGroup;
+			children = (
+				D44BB0492AD9B9F900BD4F64 /* EditDestinationViewModel.swift */,
+				D44810512AD62F1A00BC9429 /* EditDestinationView.swift */,
+			);
+			path = EditDestinationView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -167,7 +189,9 @@
 			files = (
 				D44810412AD5C7F500BC9429 /* ContentView.swift in Sources */,
 				D448103F2AD5C7F500BC9429 /* iTourApp.swift in Sources */,
+				D44BB04A2AD9B9F900BD4F64 /* EditDestinationViewModel.swift in Sources */,
 				D448104D2AD5CCB600BC9429 /* Destination.swift in Sources */,
+				D44BB04C2AD9BA0D00BD4F64 /* DestinationListingViewModel.swift in Sources */,
 				D44810522AD62F1A00BC9429 /* EditDestinationView.swift in Sources */,
 				D494AE7F2AD8C5DE00B735F3 /* Sight.swift in Sources */,
 				D41F63FD2AD76E9C0025836B /* DestinationListingView.swift in Sources */,

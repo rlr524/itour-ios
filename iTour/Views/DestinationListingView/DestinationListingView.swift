@@ -9,9 +9,9 @@ import SwiftUI
 import SwiftData
 
 struct DestinationListingView: View {
-    @Environment(\.modelContext) var mc
+    @State private var vm = DestinationListingViewModel()
     @Query(sort: [SortDescriptor(\Destination.date), SortDescriptor(\Destination.priority, order: .reverse)]) var destinations: [Destination]
-    
+
     var body: some View {
         List {
             ForEach(destinations) { destination in
@@ -24,7 +24,7 @@ struct DestinationListingView: View {
                     }
                 }
             }
-            .onDelete(perform: deleteDestination)
+            .onDelete(perform: vm.deleteDestination)
         }
     }
     
@@ -56,16 +56,6 @@ struct DestinationListingView: View {
 //            $0.date > now
 //        }, sort: [sort])
 //    }
-    
-    /// The deleteDestination method will delete a destination from the destinations array upon
-    /// user delete swipe.
-    /// - Parameter indexSet: The index set of the destionations array
-    func deleteDestination(_ indexSet: IndexSet) {
-        for index in indexSet {
-            let destination = destinations[index]
-            mc.delete(destination)
-        }
-    }
 }
 
 #Preview {

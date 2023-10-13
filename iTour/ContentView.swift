@@ -9,7 +9,7 @@ import SwiftUI
 import SwiftData
 
 struct ContentView: View {
-    @Environment(\.modelContext) var mc
+    
     /*
     Can use if you want a static sort, but we're giving the user the ability to choose the
     sort, so all sorting is done in DestinationListingView. If you wanted to do static sort,
@@ -17,15 +17,15 @@ struct ContentView: View {
     
     @Query(sort: [SortDescriptor(\Destination.date), SortDescriptor(\Destination.priority, order: .reverse)]) var destinations: [Destination]
     */
-    @State private var path = [Destination]()
+    @State private var vm = EditDestinationViewModel()
     @State private var sortOrder = SortDescriptor(\Destination.name)
     @State private var searchText = ""
     
     var body: some View {
-        NavigationStack(path: $path) {
+        NavigationStack(path: vm.$path) {
             DestinationListingView(sort: sortOrder, searchString: searchText)
                 .navigationTitle("iTour")
-                .navigationDestination(for: Destination.self, destination: EditDestinationView.init)
+                .navigationDestination(for: Destination.self, destination: EditDestinationView())
                 .searchable(text: $searchText)
                 .toolbar {
                     /*
@@ -33,7 +33,7 @@ struct ContentView: View {
                         Label("Add Samples",  systemImage: "bolt.fill")
                     }
                     */
-                    Button(action: createDestination) {
+                    Button(action: vm.createDestination) {
                         Label("Add Destination", systemImage: "plus")
                     }
                     
@@ -65,13 +65,6 @@ struct ContentView: View {
         mc.insert(tokyo)
     }
     */
-    
-    /// The createDestination() method will add a destination to the destinations array
-    func createDestination() {
-        let destination = Destination()
-        mc.insert(destination)
-        path = [destination]
-    }
 }
 
 /*
