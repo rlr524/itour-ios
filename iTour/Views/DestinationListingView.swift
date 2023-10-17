@@ -9,9 +9,9 @@ import SwiftUI
 import SwiftData
 
 struct DestinationListingView: View {
-    @State private var vm = DestinationListingViewModel()
+    @Environment(\.modelContext) var mc
     @Query(sort: [SortDescriptor(\Destination.date), SortDescriptor(\Destination.priority, order: .reverse)]) var destinations: [Destination]
-
+    
     var body: some View {
         List {
             ForEach(destinations) { destination in
@@ -24,7 +24,7 @@ struct DestinationListingView: View {
                     }
                 }
             }
-            .onDelete(perform: vm.deleteDestination)
+            .onDelete(perform: deleteDestination)
         }
     }
     
@@ -48,14 +48,24 @@ struct DestinationListingView: View {
     }
     
     // Example of an initializer using a static filter to filter on priority >= 2 or future date
-//    init (sort: SortDescriptor<Destination>) {
-//        let now = Date.now
-//        _destinations = Query(filter: #Predicate {
-//            $0.priority >= 2
-//        _destinations = Query(filter: #Predicate {
-//            $0.date > now
-//        }, sort: [sort])
-//    }
+    //    init (sort: SortDescriptor<Destination>) {
+    //        let now = Date.now
+    //        _destinations = Query(filter: #Predicate {
+    //            $0.priority >= 2
+    //        _destinations = Query(filter: #Predicate {
+    //            $0.date > now
+    //        }, sort: [sort])
+    //    }
+
+    /// The deleteDestination method will delete a destination from the destinations array upon
+    /// user delete swipe.
+    /// - Parameter indexSet: The index set of the destionations array
+    func deleteDestination(_ indexSet: IndexSet) {
+        for index in indexSet {
+            let destination = destinations[index]
+            mc.delete(destination)
+        }
+    }
 }
 
 #Preview {

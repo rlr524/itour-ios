@@ -17,15 +17,16 @@ struct ContentView: View {
     
     @Query(sort: [SortDescriptor(\Destination.date), SortDescriptor(\Destination.priority, order: .reverse)]) var destinations: [Destination]
     */
-    @State private var vm = EditDestinationViewModel()
+    @Environment(\.modelContext) var mc
     @State private var sortOrder = SortDescriptor(\Destination.name)
     @State private var searchText = ""
+    @State var path = [Destination]()
     
     var body: some View {
-        NavigationStack(path: vm.$path) {
+        NavigationStack(path: $path) {
             DestinationListingView(sort: sortOrder, searchString: searchText)
                 .navigationTitle("iTour")
-                .navigationDestination(for: Destination.self, destination: EditDestinationView())
+                .navigationDestination(for: Destination.self, destination: EditDestinationView.init)
                 .searchable(text: $searchText)
                 .toolbar {
                     /*
@@ -33,7 +34,7 @@ struct ContentView: View {
                         Label("Add Samples",  systemImage: "bolt.fill")
                     }
                     */
-                    Button(action: vm.createDestination) {
+                    Button(action: createDestination) {
                         Label("Add Destination", systemImage: "plus")
                     }
                     
@@ -52,6 +53,13 @@ struct ContentView: View {
                     }
                 }
         }
+    }
+    
+    /// The createDestination() method will add a destination to the destinations array
+    func createDestination() {
+        let destination = Destination()
+        mc.insert(destination)
+        path = [destination]
     }
     
     /*
